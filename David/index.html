@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Requerimiento Formulario</title>
+	<!-- Podemos incluir JS importando ficheros locales que estén en el
+	mismo directorio -->
+	<script type="text/javascript" src="js/fechas.js"></script>
+
+	<H1 style:center>ACT1 FELIX</H1>
+</head>
+
+<body>
+<div id="contenedor"></div>
+
+<script>
+	// Obtén el contenedor div
+	var contenedor = document.getElementById("contenedor");
+
+	// Crea un formulario
+	var formulario = document.createElement("form");
+
+	// Crea un campo de texto para el DNI
+	var dniLabel = document.createElement("label");
+	dniLabel.textContent = "DNI: ";
+	var dniInput = document.createElement("input");
+	dniInput.setAttribute("type", "text");
+	dniInput.setAttribute("name", "dni");
+	dniInput.setAttribute("placeholder", "Escribe tu DNI");
+
+	// Crea un campo de texto para el nombre
+	var nombreLabel = document.createElement("label");
+	nombreLabel.textContent = "Nombre: ";
+	var nombreInput = document.createElement("input");
+	nombreInput.setAttribute("type", "text");
+	nombreInput.setAttribute("name", "nombre");
+	nombreInput.setAttribute("placeholder", "Escribe tu nombre");
+
+	// Crea un campo de texto para los apellidos
+	var apellidosLabel = document.createElement("label");
+	apellidosLabel.textContent = "Apellidos: ";
+	var apellidosInput = document.createElement("input");
+	apellidosInput.setAttribute("type", "text");
+	apellidosInput.setAttribute("name", "apellidos");
+	apellidosInput.setAttribute("placeholder", "Escribe tus apellidos");
+
+	// Crea un campo de texto para la dirección
+	var direccionLabel = document.createElement("label");
+	direccionLabel.textContent = "Dirección: ";
+	var direccionInput = document.createElement("input");
+	direccionInput.setAttribute("type", "text");
+	direccionInput.setAttribute("name", "direccion");
+	direccionInput.setAttribute("placeholder", "Escribe tu dirección");
+
+	// Crea un campo de texto para el teléfono
+	var telefonoLabel = document.createElement("label");
+	telefonoLabel.textContent = "Teléfono: ";
+	var telefonoInput = document.createElement("input");
+	telefonoInput.setAttribute("type", "text");
+	telefonoInput.setAttribute("name", "telefono");
+	telefonoInput.setAttribute("placeholder", "Escribe tu teléfono");
+
+	// Agrega todos los elementos al formulario
+	formulario.appendChild(dniLabel);
+	formulario.appendChild(dniInput);
+	formulario.appendChild(document.createElement("br"));
+
+	formulario.appendChild(nombreLabel);
+	formulario.appendChild(nombreInput);
+	formulario.appendChild(document.createElement("br"));
+
+	formulario.appendChild(apellidosLabel);
+	formulario.appendChild(apellidosInput);
+	formulario.appendChild(document.createElement("br"));
+
+	formulario.appendChild(direccionLabel);
+	formulario.appendChild(direccionInput);
+	formulario.appendChild(document.createElement("br"));
+
+	formulario.appendChild(telefonoLabel);
+	formulario.appendChild(telefonoInput);
+	formulario.appendChild(document.createElement("br"));
+
+	// Agrega el formulario al contenedor
+	contenedor.appendChild(formulario);
+</script>
+</body>
+</html>
