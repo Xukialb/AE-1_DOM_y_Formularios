@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ES">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>DAVID FORMULARIO</title>
+</head>
+
+<body>
+    <div id="contenedor" style="background:rgb(255, 136, 0); width:90%; 
+    display:flex; margin:auto; justify-content:center;" ></div>
+
+    <script>
+   
+        //Sacamos el contenedor (osea el div, através de su id)
+        var contenedor = document.getElementById("contenedor");
+        
+        //DECLARAR FUNCIONES
+
+            //Creamos la variable enter con una función dentro para hacer saltos de línea y ahorrar tiempo escribiendo
+                function enter(){
+                    formulario.appendChild(document.createElement("br"));
+                };
+
+            //Creamos una función que añada lo que le indiquemos al formulario para ahorrar al escribir texto
+            // y que se vea el código más limpio
+
+             function addform (i){
+                formulario.appendChild(i);
+            }
+
+            //Función para crear las cajas de texto del formulario
+             function CrearElementoFormulario (id, textcontent, type, name, placeholder ){
+                //Ahora nos estamos metiendo en la etiqueta <label>estamos aquí</label>
+                id.textContent = textcontent + ": ";
+                addform(id);
+
+                //Creamos el input - Esto sería el método de entrada, lo que viene siendo la propia caja de texto o el botón radio o checkbox
+                var cajatexto= document.createElement("input");
+
+                    //Nos metemos dentro de la etiqueta input y definimios sus parámetros
+                    cajatexto.setAttribute("type", type);
+                    cajatexto.setAttribute("name", name);
+                    cajatexto.setAttribute("placeholder", placeholder);
+
+                addform(cajatexto);
+                
+
+            }
+
+
+        
+        //Creamos el elemento formulario
+    
+        var formulario = document.createElement("form");
+
+           
+
+        //creamos un campo de texto para el DNI (label es la etiqueta que siempre
+        //acompaña a cada dato de un formulario)
+        var dni = document.createElement("label");
+        CrearElementoFormulario (dni, "DNI", "text", "dni", "Escribe tu DNI");
+ 
+        enter();
+
+        //Creamos un campo de texto para el nombre
+        var nombre = document.createElement("label");
+        CrearElementoFormulario (nombre, "Nombre", "text", "nombre", "Introduzca su nombre");
+
+        enter();
+
+        //Creamos la parte relacionada con los apellidos
+
+            //Apellido 1
+            var apellido1 = document.createElement("label");
+            CrearElementoFormulario (apellido1, "Primer apellido", "text", "apellido1", "Introduzca el primer apellido");
+            enter();
+            //Apellido 2
+            var apellido2 = document.createElement("label");
+            CrearElementoFormulario (apellido2, "Segundo apellido", "text", "apellido2", "Introduzca el segundo apellido");
+        
+        enter();
+  
+        //Dirección
+        var direccion = document.createElement("label");
+        CrearElementoFormulario (direccion, "Dirección", "text", "direccion", "Introduzca la dirección")
+
+        enter();
+
+        //Teléfono
+        var telefono = document.createElement("label");
+        CrearElementoFormulario (telefono, "Teléfono", "number", "telefono", "Introduzca el teléfono")
+        
+        enter();
+        //-----------------------------
+
+        //Estado civil
+        //Creamos los radio button
+        var estadocivil = document.createTextNode("Estado civil");
+        var ArrayEstadocivil = ["Soltero", "Divorciado", "Casado", "Viudo"]
+
+        //----------------------------------
+        
+        // Aficiones
+        //Creamos los checkbox
+        var aficionestexto = document.createTextNode("Aficiones");
+
+        var ArrayAficiones = ["Padel", "Baloncesto", "Fútbol", "Atletismo", "Ciclismo"];
+
+        //------------------------------
+
+        //Creamos los select
+
+        var ciudadestexto = document.createTextNode("Ciudades");
+        
+        //Opciones de ciudades
+        var desplegable = document.createElement("select");
+        desplegable.setAttribute("name", "ciudad");
+
+            //Opciones del select
+
+            //Lo haremos con un bucle
+
+            var ciudades = ["Getafe", "Valencia", "Barcelona", "Galicia"];
+
+            for (var i = 0; i < ciudades.length; i++) {
+
+                opcion = document.createElement("option");
+                    opcion.textContent = ciudades[i]
+                    //Cada option tiene que ser hijo del select ciudades por ello lo metemos en el bucle
+                    desplegable.appendChild(opcion);
+            }
+
+       
+
+        //Creamos el textarea
+        var cajatexto = document.createElement("textarea");
+        cajatexto.setAttribute("style", "resize:none;");
+        cajatexto.setAttribute("name", "observaciones")
+
+        var caja = document.createTextNode("Observaciones");
+
+
+        //Agregamos todos los elementos al formulario
+    
+        //Radio buton
+        enter();
+        addform(estadocivil);
+        enter();
+     
+        for (var i = 0; i < ArrayEstadocivil.length; i++){
+            var estado = document.createElement("input");
+            estado.setAttribute("type", "radio");
+            estado.setAttribute("name", "estado");
+            estado.setAttribute("value", "ArrayEstadocivil[i]");
+
+            //Creamos el texto para cada botón
+           var estadoboton= document.createTextNode(ArrayEstadocivil[i]);
+            //añadimos al formulario como hijo nuestro botón radio
+            formulario.appendChild(estadoboton);
+            formulario.appendChild(estado);
+
+        }
+
+        enter();
+        
+        //Checkbox
+        enter();
+        addform(aficionestexto);
+        enter();
+        for (var i = 0; i < ArrayAficiones.length; i++){
+            var aficion = document.createElement("input");
+            aficion.setAttribute("type", "checkbox");
+            aficion.setAttribute("name", "aficiones");
+            aficion.setAttribute("value", "ArrayAficiones[i]");
+        
+            nombreaficion = document.createTextNode(ArrayAficiones[i]);
+            //Debemos agregar cada una al formulario como hijo, por ello hayque meterlo en el bucle
+            
+            formulario.appendChild(nombreaficion);
+            formulario.appendChild(aficion);
+        }
+       
+        enter();
+        
+        //Select de ciudades
+        enter();
+        addform(ciudadestexto);
+        enter();
+        addform(desplegable);
+        enter();
+        //Caja texto
+        enter();
+        addform(caja);
+        enter();
+        addform(cajatexto);
+        
+
+
+
+        //Agregamos nuestro formulario al contenedor
+        contenedor.appendChild(formulario);
+
+
+        
+    </script>
+</body>
+</html>
