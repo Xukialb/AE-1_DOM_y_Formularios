@@ -6,7 +6,55 @@
     <script type="text/javascript" src="formPizzeria.js"></script>
     <title>Formulario de pedido</title>
 </head>
-<body onload="pedirPizza()">
+
+<body>
+
+    <form name = "formulario" id="formulario">
+        <legend><h2>Formulario de pedido</h2></legend>
+
+        <!--Datos personales-->
+        <table>
+            <tr>
+                <td>Nombre</td>
+                <td><input type="text" name="nombre" id="nombre" title = "Escribe quí tu nombre" autofocus/></td>
+            </tr>
+            <tr>
+                <td>Apellidos</td>
+                <td><input type="text" name="apellidos" id="apellidos" title="Escribe aquí tus apellidos"/></td>
+            </tr>
+            <tr>
+                <td>Dirección</td>
+                <td><input type="text" name="direccion" id="direccion" title="Escribe aquí tu dirección"/></td>
+            </tr>
+            <tr>
+                <td>Teléfono</td>
+                <td><input type="number" name="telefono" id="telefono" title="Escribe aquí tu número de móvil"/></td>
+            </tr>            
+        </table><br/>
+
+        <!--Botones para radio-->
+        <label><b>Selecciona el tamaño de la pizza</b></label><br/>
+        <label>pequeña</label>
+        <input type="radio" name="tamanio" id="mediana" value ="pequeña"/>
+        <label>mediana</label>
+        <input type="radio" name="tamanio" id="mediana" value ="mediana"/>
+        <label>grande</label>
+        <input type="radio" name="tamanio" id="grande" value ="grande"/><br/><br/>
+
+        <!--Checkbox-->
+        <label><b>Selecciona los ingredientes adicionales</b></label><br/>
+        <label>pimiento</label>
+        <input type="checkbox" name="ingrediente" id="pimiento" value="pimiento"/>
+        <label>burrata</label>
+        <input type="checkbox" name="ingrediente" id="burrata" value="burrata"/>
+        <label>olivas</label>
+        <input type="checkbox" name="ingrediente" id="olivas" value="olivas"/>
+        <label>jamón</label>
+        <input type="checkbox" name="ingrediente" id="jamon" value="jamon"/><br/><br/>
+
+        <input type="button" value="Pocesar Pedido" onclick=mostrarPrecio()/>
+    </form>
+
     
     
 </body>
