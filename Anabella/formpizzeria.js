@@ -24,7 +24,7 @@ function validarForm(){
   }
 
   // Validar que se haya elegido un tamaño de pizza
-  var tamanio = document.getElementsByName("tamanio");
+  var tamanio = document.getElementsById("tamanio");
   var seleccionTam = false;
   for (var i = 0; i < tamanio.length; i++) {
     if (tamanio[i].checked) {
@@ -38,7 +38,7 @@ function validarForm(){
   }
 
   // Validar que se haya seleccionado al menos un ingrediente para la pizza
-  var ingredientes = document.getElementsByName("ingrediente");
+  var ingredientes = document.getElementsById("ingrediente");
   var seleccionIng = false;
   for (var i = 0; i < ingredientes.length; i++) {
     if (ingredientes[i].checked) {
@@ -52,21 +52,24 @@ function validarForm(){
   }
 
   // Si todas las validaciones pasan, el formulario se envía
-  return true;
+  return true;   
+  }
 
 
-  function mostarTotal(){
+  function mostrarTotal() {
     let precioPizza = 0;
 
     // Obtener el tamaño de la pizza seleccionado
-    let tamanio = document.getElementsByName("tamanio");
+    var tamanio = document.getElementsByName("tamanio");
     for (let i = 0; i < tamanio.length; i++) {
       if (tamanio[i].checked) {
-        if (tamanio[i].value === "pequeña") {
+        if (tamanio[i].value === "pequena") {
           precioPizza = 5;
-        } else if (tamanio[i].value === "mediana") {
+        } 
+        else if (tamanio[i].value === "mediana") {
           precioPizza = 10;
-        } else if (tamanio[i].value === "grande") {
+        } 
+        else if (tamanio[i].value === "grande") {
           precioPizza = 15;
         }
         break;
@@ -83,20 +86,13 @@ function validarForm(){
     }
 
     let precioTotal = precioPizza + ingredientesPrecio;
-    alert("El importe total es " = +precioTotal + "€");
-  }
-    
-    
-
+    document.getElementById("precioTotal").textContent = precioTotal + "€";
   }
 
-
-// Asociar la función de validación con el evento "submit" del formulario
-window.onload = function () {
-  var formulario = document.getElementById("formulario");
-  formulario.onsubmit = validarForm;
   
-  };
+   
+
+  
 
 
 
