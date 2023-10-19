@@ -2,8 +2,7 @@ function validarForm(){
   var nombre = document.getElementById("nombre");
   var apellidos = document.getElementById("apellidos");
   var direccion = document.getElementById("direccion");
-  var telefono = document.getElementById("telefono");
-
+  
   // Validar campos de datos obligatorios
   if (nombre.value.trim() === "" || apellidos.value.trim() === "" || direccion.value.trim() === "") {
     alert("Los campos de datos son obligatorios");
@@ -54,12 +53,49 @@ function validarForm(){
 
   // Si todas las validaciones pasan, el formulario se envía
   return true;
-}
+
+
+  function mostarTotal(){
+    let precioPizza = 0;
+
+    // Obtener el tamaño de la pizza seleccionado
+    let tamanio = document.getElementsByName("tamanio");
+    for (let i = 0; i < tamanio.length; i++) {
+      if (tamanio[i].checked) {
+        if (tamanio[i].value === "pequeña") {
+          precioPizza = 5;
+        } else if (tamanio[i].value === "mediana") {
+          precioPizza = 10;
+        } else if (tamanio[i].value === "grande") {
+          precioPizza = 15;
+        }
+        break;
+      }
+    }
+
+    // Obtener los ingredientes seleccionados
+    let ingredientes = document.getElementsByName("ingredientes");
+    let ingredientesPrecio = 0;
+    for (let i = 0; i < ingredientes.length; i++) {
+      if (ingredientes[i].checked) {
+        ingredientesPrecio += 1;
+      }
+    }
+
+    let precioTotal = precioPizza + ingredientesPrecio;
+    alert("El importe total es " = +precioTotal + "€");
+  }
+    
+    
+
+  }
+
 
 // Asociar la función de validación con el evento "submit" del formulario
 window.onload = function () {
   var formulario = document.getElementById("formulario");
   formulario.onsubmit = validarForm;
+  
   };
 
 
