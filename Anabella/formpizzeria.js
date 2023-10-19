@@ -24,7 +24,7 @@ function validarForm(){
   }
 
   // Validar que se haya elegido un tamaño de pizza
-  var tamanio = document.getElementsById("tamanio");
+  var tamanio = document.getElementsByName("tamanio");
   var seleccionTam = false;
   for (var i = 0; i < tamanio.length; i++) {
     if (tamanio[i].checked) {
@@ -38,7 +38,7 @@ function validarForm(){
   }
 
   // Validar que se haya seleccionado al menos un ingrediente para la pizza
-  var ingredientes = document.getElementsById("ingrediente");
+  var ingredientes = document.getElementsByName("ingrediente");
   var seleccionIng = false;
   for (var i = 0; i < ingredientes.length; i++) {
     if (ingredientes[i].checked) {
@@ -51,6 +51,7 @@ function validarForm(){
     return false;
   }
 
+  mostrarTotal();
   // Si todas las validaciones pasan, el formulario se envía
   return true;   
   }
@@ -63,7 +64,7 @@ function validarForm(){
     var tamanio = document.getElementsByName("tamanio");
     for (let i = 0; i < tamanio.length; i++) {
       if (tamanio[i].checked) {
-        if (tamanio[i].value === "pequena") {
+        if (tamanio[i].value === "pequeña") {
           precioPizza = 5;
         } 
         else if (tamanio[i].value === "mediana") {
@@ -86,10 +87,10 @@ function validarForm(){
     }
 
     let precioTotal = precioPizza + ingredientesPrecio;
-    document.getElementById("precioTotal").textContent = precioTotal + "€";
+    alert("El importe es: "+precioTotal + "€");
   }
 
-  
+
    
 
   
