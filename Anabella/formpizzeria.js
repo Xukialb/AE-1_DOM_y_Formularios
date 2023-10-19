@@ -1,8 +1,11 @@
 window.onload= function(){
+  //Añado algo de CSS al formulario
   document.body.style.textAlign = "left";
   document.body.style.width = "30%";
   document.body.style.margin = "auto";
   document.body.style.backgroundColor = "#FFB748";
+
+  //LLamo a la función cuando la página esté cargada
   pinchar.onclick=validarForm;
 }
 
@@ -72,11 +75,13 @@ function validarForm(){
 
     for (let i = 0; i < tamanio.length; i++) {
         if (tamanio[i].checked) {
-            if (tamanio[i].value === "pequeña") {
+            if (tamanio[i].value === "pequenia") {
                 precioPizza = 5;
-            } else if (tamanio[i].value === "mediana") {
+            } 
+            else if (tamanio[i].value === "mediana") {
                 precioPizza = 10;
-            } else if (tamanio[i].value === "grande") {
+            } 
+            else if (tamanio[i].value === "grande") {
                 precioPizza = 15;
             }
         }
