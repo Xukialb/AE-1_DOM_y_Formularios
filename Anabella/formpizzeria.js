@@ -62,35 +62,44 @@ function validarForm(){
 
     // Obtener el tamaño de la pizza seleccionado
     var tamanio = document.getElementsByName("tamanio");
+
     for (let i = 0; i < tamanio.length; i++) {
-      if (tamanio[i].checked) {
-        if (tamanio[i].value === "pequeña") {
-          precioPizza = 5;
-        } 
-        else if (tamanio[i].value === "mediana") {
-          precioPizza = 10;
-        } 
-        else if (tamanio[i].value === "grande") {
-          precioPizza = 15;
+        if (tamanio[i].checked) {
+            if (tamanio[i].value === "pequeña") {
+                precioPizza = 5;
+            } else if (tamanio[i].value === "mediana") {
+                precioPizza = 10;
+            } else if (tamanio[i].value === "grande") {
+                precioPizza = 15;
+            }
+            break;
         }
-        break;
-      }
     }
 
     // Obtener los ingredientes seleccionados
-    let ingredientes = document.getElementsByName("ingredientes");
+    var ingredientes = document.getElementsByName("ingrediente");
+
     let ingredientesPrecio = 0;
+
     for (let i = 0; i < ingredientes.length; i++) {
-      if (ingredientes[i].checked) {
-        ingredientesPrecio += 1;
-      }
+        if (ingredientes[i].checked) {
+            ingredientesPrecio += 1;
+        }
     }
 
     let precioTotal = precioPizza + ingredientesPrecio;
-    alert("El importe es: "+precioTotal + "€");
-  }
+    alert("El importe es: " + precioTotal + "€");
+}
 
 
+function cargar(){
+
+  document.body.style.textAlign = "left";
+  document.body.style.width = "30%";
+  document.body.style.margin = "auto";
+  document.body.style.backgroundColor = "#FFB748";
+
+}
    
 
   
