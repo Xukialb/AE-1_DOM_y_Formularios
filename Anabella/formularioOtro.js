@@ -1,10 +1,5 @@
-function accederForm() {
-    
-    // Agrego algo de estilo a la página
-    document.body.style.textAlign = "left";
-    document.body.style.width = "30%";
-    document.body.style.margin = "auto";
-    document.body.style.backgroundColor = "#EEE6EE";
+
+function accederForm() {     
 
     // Creo el formulario
     var formulario = document.createElement("form");
@@ -176,7 +171,7 @@ document.body.appendChild(formulario);
 //Agrego la zona del select al formulario
 let contenedorSel = document.createElement("div");
     let labelSel = document.createElement("label");
-    labelSel.textContent = "Selecciona el horraio de entrega";
+    labelSel.textContent = "Selecciona el horario de entrega";
 
     let hora = ["9.30h a 11.30h", "11.30 a 13.30h", "13.30h a 15.30h", "15.30h a 17.30h", "17.30h a 19.30h"];
     
@@ -214,9 +209,15 @@ document.body.appendChild(formulario);
     contenedorTexto.appendChild(salto);
     contenedorTexto.appendChild(textarea);
     formulario.appendChild(contenedorTexto);
+}
 
-
-
-
+window.onload=function(){
+    accederForm();
+    // Agrego algo de estilo a la página
+    document.body.style.textAlign = "left";
+    document.body.style.width = "30%";
+    document.body.style.margin = "auto";
+    document.body.style.backgroundColor = "#EEE6EE";
     
 }
+
