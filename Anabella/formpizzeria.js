@@ -1,3 +1,11 @@
+window.onload= function(){
+  document.body.style.textAlign = "left";
+  document.body.style.width = "30%";
+  document.body.style.margin = "auto";
+  document.body.style.backgroundColor = "#FFB748";
+  pinchar.onclick=validarForm;
+}
+
 function validarForm(){
   var nombre = document.getElementById("nombre");
   var apellidos = document.getElementById("apellidos");
@@ -56,7 +64,6 @@ function validarForm(){
   return true;   
   }
 
-
   function mostrarTotal() {
     let precioPizza = 0;
 
@@ -72,7 +79,6 @@ function validarForm(){
             } else if (tamanio[i].value === "grande") {
                 precioPizza = 15;
             }
-            break;
         }
     }
 
@@ -91,15 +97,12 @@ function validarForm(){
     alert("El importe es: " + precioTotal + "€");
 }
 
+pinchar.onclick = validarForm;
 
-function cargar(){
+  
 
-  document.body.style.textAlign = "left";
-  document.body.style.width = "30%";
-  document.body.style.margin = "auto";
-  document.body.style.backgroundColor = "#FFB748";
 
-}
+
    
 
   
