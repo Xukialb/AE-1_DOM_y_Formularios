@@ -1,0 +1,83 @@
+body{
+    justify-content:center;
+    position:relative;
+    background-image:url(pizza.jpg);
+    background-size:cover;
+    background-repeat:no-repeat;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+#contenedor{
+    background-color:rgba(172, 172, 172, 0.397);
+    border-radius:5px;
+    backdrop-filter:blur(3px);
+    display:flex;
+    margin:auto;
+    justify-content:center;
+    width:50vh;
+    height:500px;
+    margin-top:200px;
+
+}
+
+#nombre, #direccion, #telefono, #email{
+    background: rgba(249,249,250,0.1);
+    border-radius:5px;
+    border-color:transparent;
+
+   
+}
+
+::placeholder{
+    color:rgb(0, 0, 0) !important;
+    backdrop-filter:blur(1px);
+    border-radius:5px;
+    width:100%;
+    height:100%;
+    margin-top:0px;
+    padding-top:0px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+}
+#titulobox{
+    display:block;
+    
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 550;
+    margin-bottom:5px;
+}
+
+
+#pizzas{
+    margin-top:25px;
+    display:block;
+    border-radius: 5px;
+    border-color: black;
+    background:rgba(34,172,52,0.4);
+    backdrop-filter:blur(1px);
+    
+    
+}
+
+#totalpedido{
+    height:35px;
+    width:80px;
+    border-radius:5px;
+    background-color:rgb(34, 172, 52);
+    border-color:none;
+    border:none;
+    display:block;
+}
+
+#formulario{
+    
+    align-content: center;
+    justify-content:center;
+}
+
+#boton{
+    width:100%;
+    padding-top:20px;
+    justify-content:center;
+    display:flex;
+}

@@ -6,159 +6,53 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DAVID FORMULARIO</title>
+
+    <link rel="stylesheet" href="css/req2.css">
+    <script type="text/javascript" src="js/javascript.js"></script>
 </head>
 
 <body>
-    <div id="contenedor" style="background:pink; width:90%; 
-    display:flex; margin:auto; justify-content:center;"></div>
+    <div id="contenedor">
+
+        <div id="formulario">
 
 
-    <script>
-        var contenedor = document.getElementById("contenedor");
-        var titulo = document.createElement("h1");
-        var contenido = document.createTextNode("holaeee");
-
-        titulo.appendChild(contenido);
-        contenedor.appendChild(titulo);
-
-
-
-        //Creamos el formulario
-        var formulario = document.createElement("form")
-        contenedor.appendChild(formulario);
-
-        //Declaramos funciones
-        //Función para añadir elementos al formulario
-        function addform(i) {
-            formulario.appendChild(i);
-        }
-
-        //Función para meter un enter entre campo y campo
-        function enter() {
-            var enter = document.createElement("br");
-            formulario.appendChild(enter);
-
-        }
-        //Función para crear las cajas de texto del formulario
-        function CrearCampoFormulario(id, type, name, placeholder, textcontent) {
-
-
-            id.textContent = textcontent + ": ";
-            addform(id);
-
-            var cajatexto = document.createElement("input");
-            cajatexto.setAttribute("type", type);
-            cajatexto.setAttribute("name", name);
-            cajatexto.setAttribute("placeholder", placeholder);
-
-            addform(cajatexto);
-
-        }
-
-        enter();
-
-        var nombre = document.createElement("label");
-        CrearCampoFormulario(nombre, "text", "nombre", "Introduce tu nombre", "Nombre");
-
-        enter();
-
-
-        var direccion = document.createElement("label");
-        CrearCampoFormulario(direccion, "text", "direccion", "Introduce tu dirección", "Dirección");
-
-        enter();
-
-
-        var telefono = document.createElement("label");
-        CrearCampoFormulario(telefono, "number", "telefono", "Introduce tu telefono", "Teléfono");
-
-        enter();
-
-        var email = document.createElement("label");
-        CrearCampoFormulario(email, "email", "email", "Introduce tu email", "E-mail");
-
-        enter();
-        enter();
-
-        //TAMAÑO PIZZA
-
-        var titulotamano = document.createTextNode("Tamaño pizza");
-        addform(titulotamano);
-        enter(); 
-        var tamapizza = ["Pequeña", "Mediana", "Grande"];
+        <p id="titulobox">Nombre</p>
+        <input id="nombre" type="text" placeholder="Introduce tu nombre"></input>
+        <p id="titulobox">Dirección</p>
+        <input id="direccion" type="text" placeholder="Introduce tu dirección"></input>
+        <p id="titulobox">Teléfono</p>
+        <input id="telefono" type="number" placeholder="Introduce tu teléfono"></input>
+        <p id="titulobox">Email</p>
+        <input id="email" type="email" placeholder="Introduce tu email"></input>
         
-
-        // Crear radio buttoms
-
-        for (var i = 0; i < tamapizza.length; i++) {
-
-            var entrada = document.createElement("input");
-            //entrada.textContent = ele1[i];
-
-            entrada.setAttribute("type", "radio");
-            entrada.setAttribute("name", tamapizza[i]);
-            
-            //Vamos a meter un if para ir clasificando según cada tamaño de pizza su valor
-            if (tamapizza[i] == "Pequeña"){
-                console.log('PIZZA PEQUEÑA');
-                entrada.setAttribute("value", '5');
-                var costepequena = entrada.value;
-            }
-            else if (tamapizza[i] == "Mediana"){
-                console.log('PIZZA MEDIANA')
-                entrada.setAttribute("value", '10');
-                var costemediana = entrada.value;
-            }
-            else if (tamapizza [i] == "Grande"){
-                console.log('PIZZA GRANDE');
-                entrada.setAttribute("value", '15');
-                var costegrande = entrada.value;
-            }
-            
-            
-            //Creamos el texto para cada botón
-            var estadoboton = document.createTextNode(tamapizza[i]);
-            //añadimos al formulario como hijo nuestro botón radio
-            addform(estadoboton);
-            addform(entrada);
-
-        }
-        enter();
-        enter();
-
-
-        //Checkbox
-        var tituloingredientes = document.createTextNode("Ingredientes");
-        addform(tituloingredientes);
-        enter();
-        var ingredientes = ["Bacon", " Queso", " Tomate", " Orégano"];
-
-        for (var i=0; i < ingredientes.length; i++){
-
-            var entradaingredientes = document.createElement("input");
-
-            entradaingredientes.setAttribute("type", "checkbox");
-            entradaingredientes.setAttribute("name", "ingredientes");
-            entradaingredientes.setAttribute("value", ingredientes[i]);
-
-            var estadobotoningred = document.createTextNode(ingredientes[i]);
-            addform(estadobotoningred);
-            addform(entradaingredientes);
-        }
-
-
-
-        //Mostramos los datos de los botones radio para hacer la suma
+        <h3>Elige un tamaño</h3>
+        <div id="pizzas">
+            <input id="pequena" type="radio" value="5" name="pizza">Pequeña</input>
         
-        console.log(costepequena);
-        console.log(costemediana);
-        console.log(costegrande);
-
+            <input id="mediana" type="radio" value="10" name="pizza">Mediana</input>
         
+            <input id="grande" type="radio" value="15" name="pizza">Grande</input>
+
+            <br>
+            <br>
+            <h3>Ingredientes</h3>
+            <input id="Bacon" type="checkbox" name="ingredientes">Bacon</input>
+            <input id="Queso" type="checkbox" name="ingredientes">Queso</input>
+            <input id="Tomate" type="checkbox" name="ingredientes">Tomate</input>
+            <input id="Oregano" type="checkbox" name="ingredientes">Orégano</input>
+
+        </div>
+        <div id="boton">
+        <button id="totalpedido" type="button" >Total</button>
+        </div>
+
+    </div>    
 
 
 
-    </script>
+    
+    </div>
 
 </body>
 
