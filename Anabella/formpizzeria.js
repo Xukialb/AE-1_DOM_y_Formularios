@@ -1,40 +1,48 @@
-window.onload= function(){
-  //Añado algo de CSS al formulario
-    document.body.style.textAlign = "left";
-    document.body.style.width = "30%";
-    document.body.style.margin = "auto";
-    document.body.style.backgroundColor = "#FFB748";
-
-  //LLamo a la función cuando la página esté cargada
-    pinchar.onclick=validarForm;
-}
-
 function validarForm(){
     var nombre = document.getElementById("nombre");
     var apellidos = document.getElementById("apellidos");
     var direccion = document.getElementById("direccion");
+    var email = document.getElementById("email");
   
-  // Validar campos de datos obligatorios
+  // Valido campos de datos obligatorios
     if (nombre.value.trim() === "" || apellidos.value.trim() === "" || direccion.value.trim() === "") {
         alert("Los campos de datos son obligatorios");
         return false;
     }
 
   var numeroTelefono = telefono.value.trim();
+  var numTel = /^[0-9]{9}/;
 
-  // Validar que el número de teléfono es obligatorio
+  // Valido que el número de teléfono es obligatorio
     if (numeroTelefono === "") {
         alert("El campo de teléfono es obligatorio");
         return false;
   }
 
-  // Validar que el número de teléfono tiene exactamente 9 dígitos
-    if (numeroTelefono.length !== 9 || isNaN(numeroTelefono)) {
+  // Valido que el número de teléfono tiene exactamente 9 dígitos
+    if (!numTel.test(numeroTelefono)){
         alert("El número de teléfono debe tener nueve dígitos");
         return false;
   }
 
-  // Validar que se haya elegido un tamaño de pizza
+  //Obtengo el valor del campo y eleimino espacios en blanco
+  var dirEmail = email.value.trim();
+
+  // Validar que el email es obligatorio
+  if (dirEmail === "") {
+    alert("El campo de email es obligatorio");
+    return false;
+  }
+
+  //Valido que los campos ingresados en el email son válidos
+  var correo = /^[A-Za-z][0-9]($%&-_.)+@+[a-z].[a-z]/;
+
+  if (dirEmail.length !== correo) {
+    alert("Ingresa una dirección de correo electrónico válida");
+    return false;
+}  
+  
+// Valido que se haya elegido un tamaño de pizza
   var tamanio = document.getElementsByName("tamanio");
   var seleccionTam = false;
       for (var i = 0; i < tamanio.length; i++) {
@@ -48,7 +56,7 @@ function validarForm(){
       return false;
   }
 
-  // Validar que se haya seleccionado al menos un ingrediente para la pizza
+  // Valido que se haya seleccionado al menos un ingrediente para la pizza
   var ingredientes = document.getElementsByName("ingrediente");
   var seleccionIng = false;
       for (var i = 0; i < ingredientes.length; i++) {
@@ -70,7 +78,7 @@ function validarForm(){
   function mostrarTotal() {
       let precioPizza = 0;
 
-    // Obtener el tamaño de la pizza seleccionado
+    // Obtengo el tamaño de la pizza seleccionado
       var tamanio = document.getElementsByName("tamanio");
 
       for (let i = 0; i < tamanio.length; i++) {
@@ -87,7 +95,7 @@ function validarForm(){
         }
     }
 
-    // Obtener los ingredientes seleccionados
+    // Obtengo los ingredientes seleccionados
     var ingredientes = document.getElementsByName("ingrediente");
 
     let ingredientesPrecio = 0;
@@ -102,7 +110,16 @@ function validarForm(){
     alert("El importe es: " + precioTotal + "€");
 }
 
+window.onload= function(){
+  //Añado algo de CSS al formulario
+    document.body.style.textAlign = "left";
+    document.body.style.width = "30%";
+    document.body.style.margin = "auto";
+    document.body.style.backgroundColor = "#FFB748";
 
+  //LLamo a la función cuando la página esté cargada
+    pinchar.onclick=validarForm;
+}
 
   
 
