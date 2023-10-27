@@ -216,8 +216,7 @@ function accederForm() {
     //Asigno los atributos para el select
     let selectHora = document.createElement("select");
         selectHora.id = "hora";
-        selectHora.name = "hora";
-    
+           
     //Defino un bucle for para recorrer los elementos del array 
         for (let i = 0; i<hora.length; i++){
             let opcion = document.createElement("option");
@@ -242,8 +241,7 @@ function accederForm() {
     labelTexto.textContent = "Escribe el mensaje que contendrá la tarjeta";
     labelTexto.style.fontWeight="bold";
 
-    let textarea = document.createElement("textarea");
-    textarea.name="textarea";
+    let textarea = document.createElement("textarea");    
     textarea.id="textarea";
     textarea.style.width="90%"
 
