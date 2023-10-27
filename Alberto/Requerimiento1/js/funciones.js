@@ -87,25 +87,25 @@ function crearFormularioDOM(){
     // Radio buttons 2
     let radio5 = document.createElement("input");
     radio5.type = "radio";
-    radio5.name = "opciones";
+    radio5.name = "opciones2";
     radio5.value = "Opción 5";
     radio5.classList = "flexbox";
             
     let radio6 = document.createElement("input");
     radio6.type = "radio";
-    radio6.name = "opciones";
+    radio6.name = "opciones2";
     radio6.value = "Opción 6";
     radio6.classList = "flexbox";
     
     let radio7 = document.createElement("input");
     radio7.type = "radio";
-    radio7.name = "opciones";
+    radio7.name = "opciones2";
     radio7.value = "Opción 7";
     radio7.classList = "flexbox";
     
     let radio8 = document.createElement("input");
     radio8.type = "radio";
-    radio8.name = "opciones";
+    radio8.name = "opciones2";
     radio8.value = "Opción 8";
     radio8.classList = "flexbox";
 
@@ -139,6 +139,21 @@ function crearFormularioDOM(){
     checkbox5.value = "Checkbox 5";
     checkbox5.classList = "flexbox";  
 
+    // Campo de texto de checkboxes 2
+    let checktit2 = document.createElement("h3");
+    checktit.textContent = "Extras:"
+    
+    // Checkboxes
+    let checkbox6 = document.createElement("input");
+    checkbox6.type = "checkbox";
+    checkbox6.value = "Checkbox 6";
+    checkbox6.classList = "flexbox";
+    
+    let checkbox7 = document.createElement("input");
+    checkbox7.type = "checkbox";
+    checkbox7.value = "Checkbox 7";
+    checkbox7.classList = "flexbox";    
+
     // Campo de texto de selects
     let selectit = document.createElement("h3");
     selectit.textContent = "Tipo de pensión:"
@@ -163,7 +178,7 @@ function crearFormularioDOM(){
 
     // Campo de texto de Text Area
     let TAreatit = document.createElement("h3");
-    TAreatit.textContent = "Observaciones:"
+    TAreatit.textContent = "Observaciones / Sugerencias:"
     
     // Text area
     let textarea = document.createElement("textarea");
@@ -221,7 +236,7 @@ function crearFormularioDOM(){
     formulario.appendChild(checkbox4);
     formulario.appendChild(document.createTextNode("Mueble bar"));
     formulario.appendChild(checkbox5);
-    formulario.appendChild(document.createTextNode("Caja fuerte")); 
+    formulario.appendChild(document.createTextNode("Caja fuerte"));
 
     formulario.appendChild(selectit);
     select.appendChild(option1);
