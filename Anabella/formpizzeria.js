@@ -1,11 +1,11 @@
 function validarForm(){
-      var nombre = document.getElementById("nombre");
-      var apellidos = document.getElementById("apellidos");
+      var nombre = document.getElementById("nombre");      
       var direccion = document.getElementById("direccion");
+      var telefono = document.getElementById("telefono");
       var email = document.getElementById("email");
   
   // Valido campos de datos obligatorios
-      if (nombre.value.trim() === "" || apellidos.value.trim() === "" || direccion.value.trim() === "") {
+      if (nombre.value.trim() === "" || direccion.value.trim() === "") {
             alert("Los campos de datos son obligatorios");
             return false;
       }
@@ -25,11 +25,8 @@ function validarForm(){
           return false;
   }
 
-  //Obtengo el valor del campo y eleimino espacios en blanco
-      var dirEmail = email.value.trim();
-
-  // Validar que el email es obligatorio
-      if (dirEmail === "") {
+  //Obtengo el valor del campo y eleimino espacios en blanco . Valido que el email es obligatorio
+      if (email.value.trim()==="") {
           alert("El campo de email es obligatorio");
           return false;
 }
@@ -38,7 +35,7 @@ function validarForm(){
       var correo = /^[A-Za-z0-9._-]+@[a-z]+\.[a-z]+$/;
 
   //Agrego una condición que permita mostrar un mensaje de alerta cuando el correo no es válido
-      if (!correo.test(dirEmail)) {
+      if (!correo.test(email.value.trim())) {
           alert("Ingresa una dirección de correo electrónico válida");
           return false;
       }  
@@ -117,15 +114,17 @@ function validarForm(){
   }
 
 //Con window onload llamo a la función validar form cuando se carga la página
-window.onload= function(){
-  //Añado algo de CSS al formulario
+window.onload= function(){  
+    //LLamo a la función cuando la página esté cargada
+    pinchar.onclick=validarForm;
+
+    //Añado algo de CSS al formulario
     document.body.style.textAlign = "left";
     document.body.style.width = "30%";
     document.body.style.margin = "auto";
     document.body.style.backgroundColor = "#FFB748";
 
-  //LLamo a la función cuando la página esté cargada
-    pinchar.onclick=validarForm;
+  
 }
 
   
