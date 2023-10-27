@@ -71,6 +71,7 @@ function validarForm(){
   }
 
   mostrarTotal();
+  
   // Si todas las validaciones pasan, el formulario se envía
   return true;   
   }
