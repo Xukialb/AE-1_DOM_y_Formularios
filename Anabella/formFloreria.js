@@ -3,8 +3,18 @@ function accederForm() {
 
     // Creo el formulario con el objeto createElement y le agrego un borde
     var formulario = document.createElement("form");
+    var leyenda = document.createElement("legend");    
+    leyenda.textContent="Formulario de pedido";
+    leyenda.fontFamily="sans-serif";
+    leyenda.style.fontSize="18px";
+    leyenda.style.fontWeight="bold";
     formulario.style.border = "solid pink";
-
+    formulario.style.paddingLeft="15px";    
+    
+    //Agrego la etiqueta de la leyenda al formulario
+    formulario.appendChild(leyenda);
+    
+    
     /*Defino una función que crea un contenedor para cada label y su correspondiente imput, 
     por cada campo de entrada. Uso labelText para ingresar las diferentes etiquetas y los diferentes input 
     para completar luego, al pasar los parámetros*/
@@ -157,7 +167,8 @@ function accederForm() {
 
     // Creo el array de imágenes
     let imagenes = [{ id: "opIm1", value: "1", imageSrc: "imagenes/i1.jpg" }, { id: "opIm2", value: "2", 
-    imageSrc: "imagenes/tnegra.jpg" },{ id: "opIm3", value: "3", imageSrc: "imagenes/cumple.jpg"}];
+    imageSrc: "imagenes/tnegra.jpg" },{ id: "opIm3", value: "3", imageSrc: "imagenes/cumple.jpg"},
+    { id: "opIm3", value: "4", imageSrc: "imagenes/beige.jpg"}];
 
     //Creo el bucle for para recorrer el array su id, type, name y value.  
         for (let i = 0; i < imagenes.length; i++) {
@@ -173,11 +184,11 @@ function accederForm() {
             let opImLabel = document.createElement('label');
                 opImLabel.setAttribute("for", opcion.id);
                 opImLabel.textContent = opcion.value;
-
+                opImLabel.style.paddingLeft="7px";
+                
             //Creo el elemento imagen para añadir estilo a las mismas
             let imagen = document.createElement("img");
                 imagen.src = opcion.imageSrc;
-                imagen.style.padding = "5px";
                 imagen.style.width="60px";
                 imagen.style.height="40px";
 
@@ -240,6 +251,19 @@ function accederForm() {
     contenedorTexto.appendChild(salto);
     contenedorTexto.appendChild(textarea);
     formulario.appendChild(contenedorTexto);
+    
+    //Agrego el botón de enviar la solicitud
+    let contenedorSend = document.createElement("div");
+    let buttonSend = document.createElement("button");
+    buttonSend.textContent="Enviar";
+    buttonSend.style.backgroundColor="#D09AE3";
+    buttonSend.style.padding="5px";
+    buttonSend.style.fontWeight="bold";
+
+    //Añado el botón al contenedor y luego este al formulario
+    contenedorSend.appendChild(buttonSend);
+    formulario.appendChild(contenedorSend);
+
 
     // Agrego el formulario al documento
     document.body.appendChild(formulario);
@@ -253,7 +277,7 @@ window.onload=function(){
     document.body.style.textAlign = "left";
     document.body.style.fontFamily="sans-serif";
     document.body.style.fontSize="14px";
-    document.body.style.width = "30%";
+    document.body.style.width = "35%";
     document.body.style.margin = "auto";
     document.body.style.backgroundColor = "#EEE6EE";
     
