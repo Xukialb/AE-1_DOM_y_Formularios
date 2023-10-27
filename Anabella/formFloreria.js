@@ -51,8 +51,8 @@ function accederForm() {
     formulario.appendChild(crearContenedor("Nombre:", "nombre", "nombre", "text", "En este espacio debes escribir tu nombre"));
     formulario.appendChild(crearContenedor("Apellidos:", "apellidos", "apellidos", "text", "En este espacio debes escribir tu/s apellido/s"));
     formulario.appendChild(crearContenedor("DNI/NIE:", "dni", "dni", "text", "En este espacio debes escribir tu número de DNI o NIE"));
+    formulario.appendChild(crearContenedor("Dirección:", "dir", "dir", "text", "En este espacio debes escribir dirección"));
     formulario.appendChild(crearContenedor("Teléfono:", "tel", "tel", "text", "En este espacio debes escribir tu número de móvil"));
-    formulario.appendChild(crearContenedor("Email:", "email", "email", "text", "En este espacio debes escribir tu dirección de correo electrónico"));
 
     // Creo un contenedor para los botones de radio
     let contenedorRadio1 = document.createElement("div");
