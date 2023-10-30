@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script type="text/javascript" src="tabla.js"></script>
+</head>
+<body >
+  
+
+   <!-- <div id="principal"align="center">--> 
+      
+    <h1>Pedido pizza</h1>
+
+    <form name="formulario" id="formulario" > 
+
+      <table > 
+
+        <tr> 
+          <td > Nombre </td> 
+         <td><input type="text"name="nombre" id="nombre"></td> 
+        </tr> 
+        <tr> 
+          <td >Telefono </td> 
+           <td><input type="text"  name="telefono" id="telefono"></td> 
+        </tr> 
+        <tr>  
+          <td>Email</td> 
+          <td> <input type="email" name="email" id="email"autocomplete="off" /></td>   
+        </tr> 
+        <tr>
+          <td>Direccion</td>   
+           <td><input type="direccion"name="direccion"id="direccion" /></td>
+        </tr>
+      </table> <br/>
+       
+          <label>Elige el tamaño de la pizza </label><br/>
+          <label>Pequena</label>
+            <input type="radio" value="pequena" name="tamano" id="tamano"/>
+            <label>Mediana</label>
+            <input type="radio" value="mediana" name="tamano" id="tamano">
+            <label>Grande</label>
+           <input type="radio" value="grande"name="tamano" id="tamano"/><br/>
+       <br/>
+         <label>Elige tu ingrediente preferido</label><br/>
+         <label>Champinone</label>
+          <input type="checkbox" value="champinones" name="ingredientes"id="ingredientes"/>
+            <label>Aceitunas</label>
+             <input type="checkbox" value="aceitunas" name="ingredientes"id="ingredientes"/> <!--- Aceitunas </td>-->
+            <label>Salami</label>
+           <input type="checkbox" value="salami" name="ingredientes"id="ingredientes"/>    <!---Salami</td>-->
+            <label>Beicon</label>
+             <input type="checkbox" value="beicon" name="ingredientes"id="ingredientes"/>  <br/>
+             <br/> <!---Beicon </td>-->
+       
+     <input type="button" id="pagar" value="Validar" >
+   
+   
+     </form>
+  
+      </body>
+      </html>
