@@ -53,7 +53,7 @@ function crearFormularioDOM(){
     
     // Campo de texto de radio buttons 1
     let radiotit = document.createElement("h3");
-    radiotit.textContent = "Tipo de Habitación:"
+    radiotit.textContent = "Tipo de habitación:"
 
     // Radio buttons 1
     let radio1 = document.createElement("input");
